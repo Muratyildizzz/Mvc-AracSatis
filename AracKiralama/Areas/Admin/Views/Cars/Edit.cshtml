@@ -1,0 +1,88 @@
+﻿@model Arac
+
+@{
+    ViewData["Title"] = "Araç Düzenle";
+}
+
+<h1>Araç Düzenle</h1>
+
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id"/>
+            <input type="hidden" asp-for="Resim1" />
+            <input type="hidden" asp-for="Resim2" />
+            <input type="hidden" asp-for="Resim3" />
+            <div class="form-group">
+                <label asp-for="MarkaId" class="control-label"></label>
+                <input asp-for="MarkaId" class="form-control" />
+                <span asp-validation-for="MarkaId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Renk" class="control-label"></label>
+                <input asp-for="Renk" class="form-control" />
+                <span asp-validation-for="Renk" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Fiyati" class="control-label"></label>
+                <input asp-for="Fiyati" class="form-control" />
+                <span asp-validation-for="Fiyati" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Modeli" class="control-label"></label>
+                <input asp-for="Modeli" class="form-control" />
+                <span asp-validation-for="Modeli" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="KasaTipi" class="control-label"></label>
+                <input asp-for="KasaTipi" class="form-control" />
+                <span asp-validation-for="KasaTipi" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ModelYili" class="control-label"></label>
+                <input asp-for="ModelYili" class="form-control" />
+                <span asp-validation-for="ModelYili" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="SatistaMi" /> @Html.DisplayNameFor(model => model.SatistaMi)
+                </label>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Anasayfa" /> @Html.DisplayNameFor(model => model.Anasayfa)
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="Notlar" class="control-label"></label>
+                <input asp-for="Notlar" class="form-control" />
+                <span asp-validation-for="Notlar" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Resim1" class="control-label"></label>
+                <input asp-for="Resim1" class="form-control" type="file" />
+                <span asp-validation-for="Resim1" class="text-danger"></span>
+                <img src="/Img/Cars/@Model.Resim1" alt="" height="34" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Resim2" class="control-label"></label>
+                <input asp-for="Resim2" class="form-control" type="file" />
+                <span asp-validation-for="Resim2" class="text-danger"></span>
+                <img src="/Img/Cars/@Model.Resim2" alt="" height="34" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Resim3" class="control-label"></label>
+                <input asp-for="Resim3" class="form-control" type="file" />
+                <span asp-validation-for="Resim3" class="text-danger"></span>
+                <img src="/Img/Cars/@Model.Resim3" alt="" height="34" />
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Kaydet" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+

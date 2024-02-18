@@ -1,0 +1,79 @@
+﻿@model Kullanici
+
+@{
+    ViewData["Title"] = "Üye Kayıt";
+}
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Üye Kayıt</title>
+
+    <style>
+        body {
+            background-color: #f2f2f2; /* Arka plan rengi */
+        }
+
+        .form-group label {
+            font-weight: bold; /* Label yazıları kalın olacak */
+        }
+
+        .form-control {
+            border-color: #ccc; /* Form kontrol kenarlığı rengi */
+        }
+
+        .btn-primary {
+            background-color: #007bff; /* Kaydol düğmesi arka plan rengi */
+            border-color: #007bff; /* Kaydol düğmesi kenarlık rengi */
+        }
+
+            .btn-primary:hover {
+                background-color: #0056b3; /* Kaydol düğmesi üzerine gelindiğinde arka plan rengi */
+                border-color: #0056b3; /* Kaydol düğmesi üzerine gelindiğinde kenarlık rengi */
+            }
+    </style>
+</head>
+<body>
+    <h1>Üye Kayıt</h1>
+    <hr />
+    <div class="row">
+        <div class="col-md-4">
+            <form asp-action="Register">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="Adi" class="control-label"></label>
+                    <input asp-for="Adi" class="form-control" />
+                    <span asp-validation-for="Adi" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Soyadi" class="control-label"></label>
+                    <input asp-for="Soyadi" class="form-control" />
+                    <span asp-validation-for="Soyadi" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Email" class="control-label"></label>
+                    <input asp-for="Email" class="form-control" />
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Telefon" class="control-label"></label>
+                    <input asp-for="Telefon" class="form-control" />
+                    <span asp-validation-for="Telefon" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Sifre" class="control-label"></label>
+                    <input asp-for="Sifre" class="form-control" />
+                    <span asp-validation-for="Sifre" class="text-danger"></span>
+                </div>
+
+                <div class="form-group mt-3">
+                    <input type="submit" value="Kaydol" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

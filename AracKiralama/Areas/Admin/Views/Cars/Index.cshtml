@@ -1,0 +1,83 @@
+﻿@model IEnumerable<AracSatis.Entities.Arac>
+
+@{
+    ViewData["Title"] = "Araçlar";
+}
+
+<h1>Araçlar</h1>
+
+<p>
+    <a class="btn btn-outline-primary" asp-action="Create">Yeni Ekle</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Renk)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Fiyati)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Modeli)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.KasaTipi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ModelYili)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SatistaMi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Anasayfa)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Resim1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Marka.Adi)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Renk)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Fiyati)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Modeli)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.KasaTipi)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ModelYili)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SatistaMi)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Anasayfa)
+                </td>
+                <td>
+                    <img src="/Img/Cars/@item.Resim1" alt="" height="34" />
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Marka.Adi)
+                </td>
+                <td>
+                    <a class="btn btn-primary" asp-action="Edit" asp-route-id="@item.Id">Düzenle</a> |
+                    <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.Id">Sil</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
